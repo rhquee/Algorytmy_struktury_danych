@@ -27,6 +27,10 @@ public class Primary {
         for (int i = 0; i < primeFactors.size(); i++) {
             System.out.println(primeFactors.get(i));
         }
+   //
+        System.out.println("sito erastonesa " + eratosthenesSieve(20));
+
+
     }
 
     public static boolean isPrimary(int x) {
@@ -66,5 +70,32 @@ public class Primary {
 
         }
         return primeFactorList;
+    }
+
+    public static List<Integer> eratosthenesSieve(int x) {
+
+        int[] array = new int[x + 1];
+
+        //wypelnienie tablicy liczbami od 0 do x
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i;
+        }
+
+        for (int i = 2; i < x/2; i++) {
+            if (array[i] > 1){
+
+                for (int j = 2* i; j < array.length ; j = j+i) {
+                    array[j] = -1;
+
+                }
+            }
+        }
+        List<Integer> result = new ArrayList<>();
+        for (int elem : array) {
+            if (elem > 1) {
+                result.add(elem);
+            }
+        }
+        return result;
     }
 }
