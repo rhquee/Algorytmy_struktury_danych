@@ -27,7 +27,7 @@ public class Primary {
         for (int i = 0; i < primeFactors.size(); i++) {
             System.out.println(primeFactors.get(i));
         }
-   //
+        //wywołanie sita eratostenesa
         System.out.println("sito erastonesa " + eratosthenesSieve(20));
 
 
